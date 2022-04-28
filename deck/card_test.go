@@ -1,6 +1,9 @@
 package deck
 
-import "fmt"
+import (
+	"fmt"
+	"testing"
+)
 
 // Examples tests runs with 'go test'
 func ExampleCard() {
@@ -16,4 +19,12 @@ func ExampleCard() {
 	// Five of Clubs
 	// Queen of Diamonds
 	// Joker
+}
+
+func TestNew(t *testing.T) {
+	cards := New()
+	// 13 ranks * 4 suits
+	if len(cards) != 13*4 {
+		t.Error("Wrong number of cards in a new deck")
+	}
 }
