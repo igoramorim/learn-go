@@ -25,3 +25,5 @@ A list of tips, good practices and knowledge for easy access.
 8. `go mod tidy` tells Go to to update the the module dependecies. The command updates the go.mod file
 
 9. `go run .` runs the module
+
+10. TODO: `go:generate`

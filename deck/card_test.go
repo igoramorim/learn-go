@@ -48,3 +48,16 @@ func TestSort(t *testing.T) {
 }
 
 // TODO: Add test to Shuffle
+
+func TestJokers(t *testing.T) {
+	cards := New(Jokers(3))
+	count := 0
+	for _, c := range cards {
+		if c.Suit == Joker {
+			count++
+		}
+	}
+	if count != 3 {
+		t.Error("Expected 3 Jokers. Got: ", count)
+	}
+}
