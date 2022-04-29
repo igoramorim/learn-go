@@ -2,6 +2,7 @@ package deck
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
 )
 
@@ -47,7 +48,26 @@ func TestSort(t *testing.T) {
 	}
 }
 
-// TODO: Add test to Shuffle
+func TestShuffle(t *testing.T) {
+	// Makes shuffleRand deterministic
+	// Fist call to shuffleRand.Perm(52) should be?
+	// [40 35 ...]
+	// This overwrites the shuffleRand from the package
+	shuffledRand = rand.New(rand.NewSource(0))
+
+	original := New()
+	first := original[40]
+	second := original[35]
+
+	cards := New(Shuffle)
+
+	if cards[0] != first {
+		t.Errorf("Expected the first card to be %s. Got: %s", first, cards[0])
+	}
+	if cards[1] != second {
+		t.Errorf("Expected the first card to be %s. Got: %s", second, cards[1])
+	}
+}
 
 func TestJokers(t *testing.T) {
 	cards := New(Jokers(3))
