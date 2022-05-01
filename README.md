@@ -20,7 +20,7 @@ A list of tips, good practices and knowledge for easy access.
 
 6. `go test` runs the **_test.go** files. Use `go test -v` for details
 
-7. `go mod edit -reaplce example.com/greetings=../greetings` tells Go to look for the greetings package locally. It will modify the go.mod file
+7. `go mod edit -replace example.com/greetings=../greetings` tells Go to look for the greetings package locally. It will modify the go.mod file
 
 8. `go mod tidy` tells Go to to update the the module dependecies. The command updates the go.mod file
 
