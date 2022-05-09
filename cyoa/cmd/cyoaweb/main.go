@@ -26,6 +26,9 @@ func main() {
 		panic(err)
 	}
 
+	// tpl := template.Must(template.New("").Parse("Custom template test"))
+	// h := cyoa.NewHandler(story, cyoa.WithTemplate(tpl))
+
 	h := cyoa.NewHandler(story)
 	fmt.Printf("Starting the application on port: %d\n", *port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", *port), h))
